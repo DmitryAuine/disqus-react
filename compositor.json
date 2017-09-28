@@ -1,0 +1,90 @@
+{
+  "name": "DmitryOlkhovoi/disqus-react",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "",
+  "branch": "",
+  "style": {
+    "name": "Material",
+    "componentSet": {
+      "nav": "nav/DarkAbsoluteNav",
+      "header": "header/GradientHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "Roboto, sans-serif",
+    "heading": {
+      "fontWeight": 500,
+      "letterSpacing": "-0.01em"
+    },
+    "colors": {
+      "text": "#212121",
+      "background": "#fff",
+      "primary": "#2196f3",
+      "secondary": "#1565c0",
+      "highlight": "#ff4081",
+      "border": "#e0e0e0",
+      "muted": "#f5f5f5"
+    },
+    "layout": {
+      "centered": true,
+      "bannerHeight": "80vh",
+      "maxWidth": 896
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/DmitryOlkhovoi/disqus-react",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://npmjs.com/package/disqus-react",
+          "text": "npm"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "disqus-react",
+      "subhead": "A React component for Disqus",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "disqus-react: A React component for Disqus",
+          "url": ""
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "DmitryOlkhovoi",
+          "repo": "disqus-react"
+        }
+      ],
+      "text": "v1.0.0"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n<p>disqus-react is a component for integrating the Disqus comments embed and comment count into a React.js single-page application. All components support live reloads when new prop data is received.</p>\n<h1>Installation</h1>\n<p>Coming soon. This is still a work-in-progress and some things may change.</p>\n<h1>Basic Usage</h1>\n<p>On a typical article page with the comment count below the title, and discussion below the article body.</p>\n<pre><span class=\"hljs-keyword\">import</span> React <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">&apos;react&apos;</span>;\n<span class=\"hljs-keyword\">import</span> Disqus <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">&apos;disqus-react&apos;</span>;\n<span class=\"hljs-comment\">// Alternatively, import specific members:</span>\n<span class=\"hljs-comment\">// import { DiscussionEmbed, CommentCount } from &apos;disqus-react&apos;;</span>\n\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Article</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">React</span>.<span class=\"hljs-title\">Component</span> </span>{\n    render() {\n        <span class=\"hljs-keyword\">const</span> disqusShortname = <span class=\"hljs-string\">&apos;example&apos;</span>;\n        <span class=\"hljs-keyword\">const</span> disqusConfig = {\n            <span class=\"hljs-attr\">url</span>: <span class=\"hljs-keyword\">this</span>.props.article.url,\n            <span class=\"hljs-attr\">identifier</span>: <span class=\"hljs-keyword\">this</span>.props.article.id,\n            <span class=\"hljs-attr\">title</span>: <span class=\"hljs-keyword\">this</span>.props.article.title,\n        };\n\n        <span class=\"hljs-keyword\">return</span> (\n            &lt;div className=&quot;article&quot;&gt;\n                &lt;h1&gt;{this.props.article.title}&lt;/h1&gt;\n                &lt;Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}&gt;\n                    Comments\n                &lt;/Disqus.CommentCount&gt;\n                &lt;p&gt;{this.props.article.body}&lt;/p&gt;\n                &lt;Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} /&gt;\n            &lt;/div&gt;\n        );\n    }\n}</pre><p>The <code>&lt;DiscussionEmbed /&gt;</code> component is limited to one instance in the entire DOM at a time. If multiple are included, only one will be loaded. The component will handle updates to both the <code>config</code> and <code>shortname</code> props and reload appropriately with the new discussion thread.</p>\n<p>The <code>&lt;CommentCount /&gt;</code> component may include multiple instances on the same page with different <code>config</code> variables (e.g. an article list showing the comment count for all). However, all threads on the site must be under the same primary site <code>shortname</code>. If the component receives a new <code>shortname</code>, all instances will be reset with counts for threads matching the updated site.</p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/DmitryOlkhovoi/disqus-react",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/DmitryOlkhovoi",
+          "text": "DmitryOlkhovoi"
+        }
+      ]
+    }
+  ]
+}
